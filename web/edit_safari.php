@@ -88,7 +88,7 @@
         <script>
             $(document).ready(function(){
                 $("#saveWaypoint").click(function(e){
-                    $('#waypointTable tbody').append('<tr><td>' + $("#waypointSequence").val() + "</td><td>" + $("#waypointLatitude").val() + "</td><td>" + $("#waypointLongitude").val() + "</td><td>Edit</td><td>Delete</td></tr>");
+                    $('#waypointTable tbody').append('<tr><td>' + $("#waypointSequence").val() + "</td><td>" + $("#waypointLatitude").val() + "</td><td>" + $("#waypointLongitude").val() + "</td><td><a href=\"javascript:void\" class=\"editWaypointLink\">Edit</a></td><td><a href=\"javascript:void\" class=\"deleteWaypointLink\">Delete</a></td></tr>");
                 });
 
                 $("#waypointModal").on("show.bs.modal", function(e){
