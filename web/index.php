@@ -27,14 +27,14 @@
 	</head>
 	<body>
 		<div class="page-header">
-			<h1>Example page header <small>Subtext for header</small></h1>
+			<h1>TANAPA Safari</h1>
 		</div>
 		<div class="panel panel-default">
 			<div class="panel-heading">Safaris</div>
 			<ul class="list-group">
 				<?php
 					foreach($safaris as $safari) {
-						echo "<li class=\"list-group-item\">" . $safari["name"] . "</li>";
+						echo "<li class=\"list-group-item\"><a href=\"edit_safari.php?id=" . $safari["id"] . "\">" . $safari["name"] . "</li>";
 					}
 				?>
 			</ul>
