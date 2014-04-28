@@ -111,6 +111,7 @@
                                     echo "<td>" . $waypoint["sequence"] . "</td>";
                                     echo "<td>" . $waypoint["latitude"] . "</td>";
                                     echo "<td>" . $waypoint["longitude"] . "</td>";
+                                    echo "<td><a href=\"javascript:alert('derp')\">Delete</a></td>" 
                                     echo "</tr>";
                                 }
                             ?>
