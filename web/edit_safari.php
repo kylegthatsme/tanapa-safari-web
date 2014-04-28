@@ -107,11 +107,11 @@
                             </tr>
                             <?php
                                 foreach($waypoints as $waypoint) {
-                                    echo "<tr>"
+                                    echo "<tr>";
                                     echo "<td>" . $waypoint["sequence"] . "</td>";
                                     echo "<td>" . $waypoint["latitude"] . "</td>";
                                     echo "<td>" . $waypoint["longitude"] . "</td>";
-                                    echo "</tr>"
+                                    echo "</tr>";
                                 }
                             ?>
                         </table>
