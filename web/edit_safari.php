@@ -39,8 +39,8 @@
             <div class="col-md-6 col-md-offset-2">
                 <form>
                     <?php
-                        echo "<input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Name\" value=\"" . $safari["name"] . "\"/>";
-                        echo "<input type=\"textarea\" class=\"form-control\" id=\"description\" placeholder=\"Description\" value=\"" . $safari["description"] ."\"/>";
+                        echo "<div class=\"input-group\"><input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Name\" value=\"" . $safari["name"] . "\"/></div>";
+                        echo "<div class=\"input-group\"><textare rows=\"5\" class=\"form-control\" id=\"description\" placeholder=\"Description\" value=\"" . $safari["description"] ."\"/></div>";
                     ?>
                 </form>
             </div>
