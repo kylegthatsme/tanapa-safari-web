@@ -106,6 +106,8 @@
                                 <th>Sequence</th>
                                 <th>Latitude</th>
                                 <th>Longitude</th>
+                                <th>&nbsp;</th>
+                                <th>&nbsp;</th>
                             </tr>
                             <?php
                                 foreach($waypoints as $waypoint) {
@@ -113,6 +115,7 @@
                                     echo "<td>" . $waypoint["sequence"] . "</td>";
                                     echo "<td>" . $waypoint["latitude"] . "</td>";
                                     echo "<td>" . $waypoint["longitude"] . "</td>";
+                                    echo "<td><a href=\"javascript:alert('derp')\">Edit</a></td>"; 
                                     echo "<td><a href=\"javascript:alert('derp')\">Delete</a></td>"; 
                                     echo "</tr>";
                                 }
@@ -120,28 +123,28 @@
                         </table>
 
                         <!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                            Add Waypoint
+                        </button>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        ...
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         
                     </div>
                     <div class="panel panel-default">
