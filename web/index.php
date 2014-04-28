@@ -26,6 +26,9 @@
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	</head>
 	<body>
+		<div class="page-header">
+			<h1>Example page header <small>Subtext for header</small></h1>
+		</div>
 		<div class="panel panel-default">
 			<div class="panel-heading">Safaris</div>
 			<ul class="list-group">
