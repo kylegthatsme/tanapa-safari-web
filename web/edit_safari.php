@@ -88,7 +88,7 @@
         <script>
             $(document).ready(function(){
                 $("#saveWaypoint").click(function(e){
-                    alert($("#waypointSequence").val());
+                    $('#waypointTable tbody').append('<tr><td>' + $("#waypointSequence").val() + "</td><td>" + $("#waypointLatitude").val() + "</td><td>" + $("#waypointLongitude").val() + "</td><td>Edit</td><td>Delete</td></tr>");
                 });
 
                 $("#waypointModal").on("show.bs.modal", function(e){
@@ -119,25 +119,29 @@
                     ?>
                     <div class="panel panel-default">
                         <div class="panel-heading">Waypoints</div>
-                        <table class="table table-striped">
-                            <tr>
-                                <th>Sequence</th>
-                                <th>Latitude</th>
-                                <th>Longitude</th>
-                                <th>&nbsp;</th>
-                                <th>&nbsp;</th>
-                            </tr>
-                            <?php
-                                foreach($waypoints as $waypoint) {
-                                    echo "<tr>";
-                                    echo "<td>" . $waypoint["sequence"] . "</td>";
-                                    echo "<td>" . $waypoint["latitude"] . "</td>";
-                                    echo "<td>" . $waypoint["longitude"] . "</td>";
-                                    echo "<td><a href=\"javascript:alert('derp')\">Edit</a></td>"; 
-                                    echo "<td><a href=\"javascript:alert('derp')\">Delete</a></td>"; 
-                                    echo "</tr>";
-                                }
-                            ?>
+                        <table id="waypointTable" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Sequence</th>
+                                    <th>Latitude</th>
+                                    <th>Longitude</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                    foreach($waypoints as $waypoint) {
+                                        echo "<tr>";
+                                        echo "<td>" . $waypoint["sequence"] . "</td>";
+                                        echo "<td>" . $waypoint["latitude"] . "</td>";
+                                        echo "<td>" . $waypoint["longitude"] . "</td>";
+                                        echo "<td><a href=\"javascript:alert('derp')\">Edit</a></td>"; 
+                                        echo "<td><a href=\"javascript:alert('derp')\">Delete</a></td>"; 
+                                        echo "</tr>";
+                                    }
+                                ?>
+                            </tbody>
                         </table>
 
                         <!-- Button trigger modal -->
