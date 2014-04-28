@@ -88,7 +88,7 @@
         <script>
             $(document).ready(function(){
                 $("#saveWaypoint").click(function(e){
-                    $('#waypointTable tbody').append('<tr><td>' + $("#waypointSequence").val() + "</td><td>" + $("#waypointLatitude").val() + "</td><td>" + $("#waypointLongitude").val() + "</td><td><a href=\"javascript:void\" class=\"editWaypointLink\">Edit</a></td><td><a href=\"javascript:void\" class=\"deleteWaypointLink\">Delete</a></td></tr>");
+                    $('#waypointTable tbody').append('<tr><td>' + $("#waypointSequence").val() + "</td><td>" + $("#waypointLatitude").val() + "</td><td>" + $("#waypointLongitude").val() + "</td><td><a href=\"javascript:void(0)\" class=\"editWaypointLink\">Edit</a></td><td><a href=\"javascript:void(0)\" class=\"deleteWaypointLink\">Delete</a></td></tr>");
                 });
 
                 $("#waypointModal").on("show.bs.modal", function(e){
@@ -142,8 +142,8 @@
                                         echo "<td>" . $waypoint["sequence"] . "</td>";
                                         echo "<td>" . $waypoint["latitude"] . "</td>";
                                         echo "<td>" . $waypoint["longitude"] . "</td>";
-                                        echo "<td><a class=\"editWaypointLink\" href=\"javascript:void\">Edit</a></td>"; 
-                                        echo "<td><a class=\"deleteWaypointLink\" href=\"javascript:void\">Delete</a></td>"; 
+                                        echo "<td><a class=\"editWaypointLink\" href=\"javascript:void(0)\">Edit</a></td>"; 
+                                        echo "<td><a class=\"deleteWaypointLink\" href=\"javascript:void(0)\">Delete</a></td>"; 
                                         echo "</tr>";
                                     }
                                 ?>
