@@ -84,6 +84,14 @@
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $("#saveWaypoint").click(function(e){
+                    alert($("#waypointSequence").value());
+                });
+            });
+        </script>
     </head>
     <body>
         <div class="page-header">
@@ -142,7 +150,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button id="saveWaypoint" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
                                     </div>
                                 </div>
                             </div>
