@@ -33,7 +33,7 @@
     </head>
     <body>
         <div class="page-header">
-            <h1>TANAPA Safari <small>Edit Safari</small></h1>
+            <h1 style="padding-left: 15px;">TANAPA Safari <small>Edit Safari</small></h1>
         </div>
         <div class="container-fluid">
             <div class="col-md-6 col-md-offset-2">
