@@ -20,7 +20,8 @@
 
 ?>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
         
@@ -31,10 +32,12 @@
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     </head>
     <body>
+
         <div class="page-header">
             <h1>TANAPA Safari <small>Edit Safari</small></h1>
         </div>
-        <div class=".col-md-5 .col-md-offset-2">
+        <div class="container-fluid">
+        <div class="col-md-6 col-md-offset-2">
             <form>
                 <?php
                     echo "<input type=\"text\" id=\"name\" placeholder=\"Name\" value=\"" . $safari["name"] . "\"/>";
