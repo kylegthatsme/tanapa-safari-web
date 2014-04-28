@@ -116,11 +116,11 @@ INSERT INTO MEDIA(type, url) VALUES ('image/jpeg', '/media/poi_pool.jpg');
 SET @avana_pool_media_id = LAST_INSERT_ID();
 
 INSERT INTO SAFARI_POINTS_OF_INTEREST(name, media_id, safari_id, latitude, longitude, radius)
-    VALUES("Dog Park", @avana_dogpark_media_id, @avana_safari_id, "34.81953", "-82.308396", 100);
+    VALUES("Dog Park", @avana_dogpark_media_id, @avana_safari_id, "34.81953", "-82.308396", 50);
 INSERT INTO SAFARI_POINTS_OF_INTEREST(name, media_id, safari_id, latitude, longitude, radius)
-    VALUES("Car Care Center", @avana_carcare_media_id, @avana_safari_id, "34.818406", "-82.308873", 100);
+    VALUES("Car Care Center", @avana_carcare_media_id, @avana_safari_id, "34.818406", "-82.308873", 50);
 INSERT INTO SAFARI_POINTS_OF_INTEREST(name, media_id, safari_id, latitude, longitude, radius)
-    VALUES("Pool", @avana_pool_media_id, @avana_safari_id, "34.819437", "-82.309763", 100);
+    VALUES("Pool", @avana_pool_media_id, @avana_safari_id, "34.819437", "-82.309763", 50);
 
 
 
