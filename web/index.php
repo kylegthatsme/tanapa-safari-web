@@ -31,7 +31,7 @@
 			<ul class="list-group">
 				<?php
 					foreach($safaris as $safari) {
-						echo "<li class=\"list-group-item\">$safari->name</li>"
+						echo "<li class=\"list-group-item\">$safari->name</li>";
 					}
 				?>
 			</ul>
