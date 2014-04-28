@@ -99,7 +99,7 @@
                     ?>
                     <div class="panel panel-default">
                         <div class="panel-heading">Waypoints</div>
-                        <table>
+                        <table class="table-striped">
                             <tr>
                                 <th>Sequence</th>
                                 <th>Latitude</th>
