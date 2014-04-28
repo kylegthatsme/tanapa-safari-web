@@ -39,7 +39,7 @@
             <div class="col-md-6 col-md-offset-2">
                 <form>
                     <?php
-                        echo "<input type=\"text\" id=\"name\" placeholder=\"Name\" value=\"" . $safari["name"] . "\"/>";
+                        echo "<input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Name\" value=\"" . $safari["name"] . "\"/>";
                     ?>
                 </form>
             </div>
