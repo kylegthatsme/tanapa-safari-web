@@ -143,7 +143,7 @@
                                         echo "<td>" . $waypoint["latitude"] . "</td>";
                                         echo "<td>" . $waypoint["longitude"] . "</td>";
                                         echo "<td><a class=\"editWaypointLink\" href=\"javascript:void\">Edit</a></td>"; 
-                                        echo "<td><a class=\"deleteWaypointLink\" href=\"javascript:alert('derp')\">Delete</a></td>"; 
+                                        echo "<td><a class=\"deleteWaypointLink\" href=\"javascript:void\">Delete</a></td>"; 
                                         echo "</tr>";
                                     }
                                 ?>
