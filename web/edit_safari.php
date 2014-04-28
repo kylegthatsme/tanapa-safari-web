@@ -116,6 +116,31 @@
                             ?>
                         </table>
                     </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Points of Interest</div>
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Name</th>
+                                <th>Latitude</th>
+                                <th>Longitude</th>
+                                <th>Radius</th>
+                                <th>Image</th>
+                            </tr>
+                            <?php
+                                foreach($waypoints as $waypoint) {
+                                    $media_url = $isset($waypoint["media"]) ? substr($waypoint["media"]["url"], 1) : null;
+                                    $media_val = $isnull($media_url) ? "<a href=\"" . $media_url . "\">" . $media_url . "</a>" : "&nbsp;";
+                                    echo "<tr>";
+                                    echo "<td>" . $waypoint["name"] . "</td>";
+                                    echo "<td>" . $waypoint["latitude"] . "</td>";
+                                    echo "<td>" . $waypoint["longitude"] . "</td>";
+                                    echo "<td>" . $waypoint["radius"] . "</td>";
+                                    echo "<td>" . $media_val . "</td>";
+                                    echo "</tr>";
+                                }
+                            ?>
+                        </table>
+                    </div>
                 </form>
             </div>
         </div>
