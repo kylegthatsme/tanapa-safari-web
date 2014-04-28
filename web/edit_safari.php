@@ -120,6 +120,7 @@
                             <input type="text" id="waypointSequnce" placeholder="Sequence"/>
                             <input type="text" id="waypointLatitude" placeholder="Latitude"/>
                             <input type="text" id="waypointLongitude" placeholder="Longitude"/>
+                            <button type="button" class="btn btn-primary">Save</button>
                         </div>
                         
                     </div>
