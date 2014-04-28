@@ -100,9 +100,7 @@
                 });
 
                 $(".deleteWaypointLink").on("click", function(e){
-                    console.log(e);
-                    console.log(this);
-                    //this.closest("tr").remove();   
+                    $(this).closest("tr").remove();   
                 });
 
 
