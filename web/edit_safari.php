@@ -115,6 +115,13 @@
                                 }
                             ?>
                         </table>
+
+                        <div id="waypointForm">
+                            <input type="text" id="waypointSequnce" placeholder="Sequence"/>
+                            <input type="text" id="waypointLatitude" placeholder="Latitude"/>
+                            <input type="text" id="waypointLongitude" placeholder="Longitude"/>
+                        </div>
+                        
                     </div>
                     <div class="panel panel-default">
                         <div class="panel-heading">Points of Interest</div>
