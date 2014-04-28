@@ -128,15 +128,17 @@
                         </button>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="waypointModalTitle" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                        <h4 class="modal-title" id="waypointModalTitle">Waypoint Form</h4>
                                     </div>
                                     <div class="modal-body">
-                                        ...
+                                        <input type="text" placeholder="Sequence" id="waypointSequence"/>
+                                        <input type="text" placeholder="Latitude" id="waypointLatitude"/>
+                                        <input type="text" placeholder="Longitude" id="waypointLongitude"/>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
