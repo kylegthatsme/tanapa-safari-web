@@ -88,7 +88,7 @@
         <script>
             $(document).ready(function(){
                 $("#saveWaypoint").click(function(e){
-                    alert($("#waypointSequence").value());
+                    alert($("#waypointSequence").val());
                 });
             });
         </script>
