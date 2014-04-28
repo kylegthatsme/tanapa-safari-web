@@ -127,14 +127,14 @@
                                 <th>Image</th>
                             </tr>
                             <?php
-                                foreach($waypoints as $waypoint) {
-                                    $media_url = isset($waypoint["media"]) ? substr($waypoint["media"]["url"], 1) : null;
+                                foreach($points_of_interest as $poi) {
+                                    $media_url = isset($poi["media"]) ? substr($poi["media"]["url"], 1) : null;
                                     $media_val = is_null($media_url) ? "<a href=\"" . $media_url . "\">" . $media_url . "</a>" : "&nbsp;";
                                     echo "<tr>";
-                                    echo "<td>" . $waypoint["name"] . "</td>";
-                                    echo "<td>" . $waypoint["latitude"] . "</td>";
-                                    echo "<td>" . $waypoint["longitude"] . "</td>";
-                                    echo "<td>" . $waypoint["radius"] . "</td>";
+                                    echo "<td>" . $poi["name"] . "</td>";
+                                    echo "<td>" . $poi["latitude"] . "</td>";
+                                    echo "<td>" . $poi["longitude"] . "</td>";
+                                    echo "<td>" . $poi["radius"] . "</td>";
                                     echo "<td>" . $media_val . "</td>";
                                     echo "</tr>";
                                 }
