@@ -90,7 +90,17 @@
                 $("#saveWaypoint").click(function(e){
                     alert($("#waypointSequence").val());
                 });
+
+                $("#waypointModal").on("show.bs.modal", function(e){
+
+                });
+                
+                $("#addWaypointBtn").on("click", function(e){
+                    $("#waypointModal").modal("show");   
+                });
+
             });
+
         </script>
     </head>
     <body>
@@ -131,12 +141,12 @@
                         </table>
 
                         <!-- Button trigger modal -->
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                        <button id="addWaypointBtn" class="btn btn-primary">
                             Add Waypoint
                         </button>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="waypointModalTitle" aria-hidden="true">
+                        <div class="modal fade" id="waypointModal" tabindex="-1" role="dialog" aria-labelledby="waypointModalTitle" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
