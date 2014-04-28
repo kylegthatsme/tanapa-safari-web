@@ -128,8 +128,8 @@
                             </tr>
                             <?php
                                 foreach($waypoints as $waypoint) {
-                                    $media_url = $isset($waypoint["media"]) ? substr($waypoint["media"]["url"], 1) : null;
-                                    $media_val = $isnull($media_url) ? "<a href=\"" . $media_url . "\">" . $media_url . "</a>" : "&nbsp;";
+                                    $media_url = isset($waypoint["media"]) ? substr($waypoint["media"]["url"], 1) : null;
+                                    $media_val = is_null($media_url) ? "<a href=\"" . $media_url . "\">" . $media_url . "</a>" : "&nbsp;";
                                     echo "<tr>";
                                     echo "<td>" . $waypoint["name"] . "</td>";
                                     echo "<td>" . $waypoint["latitude"] . "</td>";
