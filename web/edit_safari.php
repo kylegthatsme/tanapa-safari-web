@@ -42,6 +42,8 @@
                         echo "<div class=\"form-group\"><input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Name\" value=\"" . $safari["name"] . "\"/></div>";
                         echo "<div class=\"form-group\"><textarea rows=\"5\" class=\"form-control\" id=\"description\" placeholder=\"Description\">" . $safari["description"] . "</textarea></div>";
                         echo "<div class=\"form-group\"><input type=\"file\" id=\"tile_media\"/><img src=\"" . substr($safari["tile_media_url"], 1) . "\"/></div>";
+                        echo "<div class=\"form-group\"><input type=\"file\" id=\"header_media\"/><img src=\"" . substr($safari["header_media_url"], 1) . "\"/></div>";
+                        echo "<div class=\"form-group\"><input type=\"file\" id=\"footer_media\"/><img src=\"" . substr($safari["footer_media_url"], 1) . "\"/></div>";
                     ?>
                 </form>
             </div>
