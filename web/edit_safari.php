@@ -129,7 +129,7 @@
                             <?php
                                 foreach($points_of_interest as $poi) {
                                     $media_url = isset($poi["media"]) ? substr($poi["media"]["url"], 1) : null;
-                                    $media_val = is_null($media_url) ? "<a href=\"" . $media_url . "\">" . $media_url . "</a>" : "&nbsp;";
+                                    $media_val = !is_null($media_url) ? "<a href=\"" . $media_url . "\">" . $media_url . "</a>" : "&nbsp;";
                                     echo "<tr>";
                                     echo "<td>" . $poi["name"] . "</td>";
                                     echo "<td>" . $poi["latitude"] . "</td>";
