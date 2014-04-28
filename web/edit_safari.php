@@ -40,6 +40,7 @@
                 <form>
                     <?php
                         echo "<input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Name\" value=\"" . $safari["name"] . "\"/>";
+                        echo "<input type=\"textarea\" class=\"form-control\" id=\"description\" placeholder=\"Description\" value=\"" . $safari["description"] ."\"/>";
                     ?>
                 </form>
             </div>
