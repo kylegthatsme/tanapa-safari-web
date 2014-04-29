@@ -200,17 +200,19 @@
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                         <h4 class="modal-title" id="waypointModalTitle">Waypoint Form</h4>
                                     </div>
-                                    <div class="modal-body form-horizontal">
-                                        <div class="form-group">
-                                            <label>Sequence</label>
-                                            <input class="form-control" type="text" placeholder="Sequence" id="waypointSequence"/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" type="text" placeholder="Latitude" id="waypointLatitude"/>
-                                        </div>
-                                        <div class="form-group">    
-                                            <input class="form-control" type="text" placeholder="Longitude" id="waypointLongitude"/>
-                                        </div>
+                                    <div class="modal-body">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label>Sequence</label>
+                                                <input class="form-control" type="text" placeholder="Sequence" id="waypointSequence"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" type="text" placeholder="Latitude" id="waypointLatitude"/>
+                                            </div>
+                                            <div class="form-group">    
+                                                <input class="form-control" type="text" placeholder="Longitude" id="waypointLongitude"/>
+                                            </div>
+                                        </form>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
