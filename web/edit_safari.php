@@ -143,7 +143,7 @@
             <h1 style="padding-left: 15px;">TANAPA Safari <small>Edit Safari</small></h1>
         </div>
         <div class="container-fluid">
-            <div class="col-md-6 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 
                     <?php
                         echo "<div class=\"form-group\"><input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Name\" value=\"" . $safari["name"] . "\"/></div>";
