@@ -113,15 +113,15 @@
                         // Closure to capture the file information.
                         reader.onload = (function(theFile) {
                             return function(e) {
-                                $.ajax({
-                                    type: "POST",
-                                    url: "media.php",
-                                    data: e.target.result,
-                                    dataType: theFile.type,
-                                    success: function(data) {
+                                $.post( 
+                                    "media.php", 
+                                    e.target.result,
+                                    function(data) {
                                         console.log("blah");
                                         console.log(data);
-                                    }
+                                    }, 
+                                    theFile.type,
+
                                     
                                 });
                                 console.log(e.target.result);
