@@ -86,9 +86,18 @@
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
         <script>
+
             $(document).ready(function(){
+
+                // True if modal is being used to create new, false if being used to edit values.
+                var rowBeingEdited;
+
                 $("#saveWaypoint").click(function(e){
-                    $('#waypointTable tbody').append('<tr><td>' + $("#waypointSequence").val() + "</td><td>" + $("#waypointLatitude").val() + "</td><td>" + $("#waypointLongitude").val() + "</td><td><a href=\"javascript:void(0)\" class=\"editWaypointLink\">Edit</a></td><td><a href=\"javascript:void(0)\" class=\"deleteWaypointLink\">Delete</a></td></tr>");
+                    if (rowBeingEdited) {
+                        rowBeingEdited.find("td:nth-child(1)").text($("#waypointSequence").val());
+                    } else {
+                        $('#waypointTable tbody').append('<tr><td>' + $("#waypointSequence").val() + "</td><td>" + $("#waypointLatitude").val() + "</td><td>" + $("#waypointLongitude").val() + "</td><td><a href=\"javascript:void(0)\" class=\"editWaypointLink\">Edit</a></td><td><a href=\"javascript:void(0)\" class=\"deleteWaypointLink\">Delete</a></td></tr>");
+                    }
                 });
 
                 $("#waypointModal").on("show.bs.modal", function(e){
@@ -96,6 +105,7 @@
                 });
                 
                 $("#addWaypointBtn").on("click", function(e){
+                    rowBeingEdited = null;
                     $("#waypointModal").modal("show");
                 });
 
@@ -104,11 +114,11 @@
                 });
 
                 $("#waypointTable").on("click", ".editWaypointLink", function(e){
-                    var tr = $(this).closest("tr");
 
-                    $("#waypointSequence").val(tr.find("td:nth-child(1)").text());
-                    $("#waypointLatitude").val(tr.find("td:nth-child(2)").text());
-                    $("#waypointLongitude").val(tr.find("td:nth-child(3)").text());
+                    rowBeingEdited = $(this).closest("tr");
+                    $("#waypointSequence").val(rowBeingEdited.find("td:nth-child(1)").text());
+                    $("#waypointLatitude").val(rowBeingEdited.find("td:nth-child(2)").text());
+                    $("#waypointLongitude").val(rowBeingEdited.find("td:nth-child(3)").text());
                     $("#waypointModal").modal("show");
 
                 });
