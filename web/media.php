@@ -6,7 +6,7 @@ $mime_type;
 
 // Handle multipart file uploads
 if (isset ( $_FILES ['file'] )) {
-    $file_uploaded = $_FILES['file']['tmp_name'];
+    $file_uploaded = fopen($_FILES['file']['tmp_name']);
     $mime_type = $_FILES['file']['type'];
 } else if ($_SERVER["REQUEST_METHOD"] == "POST") {
     /* PUT data comes in on the stdin stream */
