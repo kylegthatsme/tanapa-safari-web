@@ -104,47 +104,25 @@
 
 
                 $("#savePoiBtn").on("click", function(e){
-                    /*
-                    var f = $("#poiMediaFile").get(0).files[0];
-                    if (f.type.match('image.*')) {
-
-                        var reader = new FileReader();    
-
-                        // Closure to capture the file information.
-                        reader.onload = (function(theFile) {
-                            return function(e) {
-                                $.post( 
-                                    "media.php", 
-                                    e.target.result,
-                                    function(data) {
-                                        console.log("blah");
-                                        console.log(data);
-                                    }, 
-                                    theFile.type
-                                );
-                                
-                            };
-                        })(f);
-
-                        // Read in the image file as a data URL.
-                        reader.readAsDataURL(f);
-
+                    
+                    if ($("#poiMediaFile").val()) {
+                        // If there is an image specified, upload it.
+                        var formData = new FormData($("#poiMediaFileForm")[0]);
+                        $.ajax({
+                            url: 'media.php',  //Server script to process data
+                            type: 'POST',
+                            success: function(data){
+                                var response = JSON.parse(data);
+                                rowBeingEdited.find("td:nth-child(5)").text(response.url);
+                            },
+                            // Form data
+                            data: formData,
+                            //Options to tell jQuery not to process data or worry about content-type.
+                            cache: false,
+                            contentType: false,
+                            processData: false
+                        });
                     }
-                    */
-
-                    var formData = new FormData($("#poiMediaFileForm")[0]);
-                    $.ajax({
-                        url: 'media.php',  //Server script to process data
-                        type: 'POST',
-                        success: function(data){console.log(data)},
-                        // Form data
-                        data: formData,
-                        //Options to tell jQuery not to process data or worry about content-type.
-                        cache: false,
-                        contentType: false,
-                        processData: false
-                    });
-  
                     if (rowBeingEdited) {
                         rowBeingEdited.find("td:nth-child(1)").text($("#poiName").val());
                         rowBeingEdited.find("td:nth-child(2)").text($("#poiLatitude").val());
@@ -153,6 +131,7 @@
                     } else {
                         // it was an addition.
                     }
+
                 });
 
 
