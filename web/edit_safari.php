@@ -105,7 +105,7 @@
 
                 $("#savePoiBtn").on("click", function(e){
                     
-                    var f = $("#poiMediaFile")[0].files[0];
+                    var f = $("#poiMediaFile").get(0).files[0];
                     if (f.type.match('image.*')) {
 
                         var reader = new FileReader();    
