@@ -109,7 +109,10 @@
                         rowBeingEdited.find("td:nth-child(2)").text($("#poiLatitude").val());
                         rowBeingEdited.find("td:nth-child(3)").text($("#poiLongitude").val());
                         rowBeingEdited.find("td:nth-child(4)").text($("#poiRadius").val());
-                        console.log($("#poiMediaFile"))
+                        var mediaFileInput = $("poiMediaFile");
+                        if (mediaFileInput.val()) {
+                            mediaFileInput.form.submit();
+                        }
                     } else {
                         // it was an addition.
                     }
@@ -314,10 +317,12 @@
                                                     <input class="form-control" type="text" placeholder="Radius" id="poiRadius"/>
                                                 </div>
                                             </div>
+                                        </form>
+                                        <form class="form-horizontal" action="media.php" method="POST">
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Image</label>
                                                 <div class="col-sm-4">
-                                                    <input type="file" id="poiMediaFile"/>
+                                                    <input type="file" id="poiMediaFile" name="file"/>
                                                 </div>
                                             </div>
                                         </form>
