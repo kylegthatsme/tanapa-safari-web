@@ -92,7 +92,7 @@
                 // True if modal is being used to create new, false if being used to edit values.
                 var rowBeingEdited;
 
-                $("#saveWaypoint").click(function(e){
+                $("#saveWaypointBtn").on("click", function(e){
                     if (rowBeingEdited) {
                         rowBeingEdited.find("td:nth-child(1)").text($("#waypointSequence").val());
                         rowBeingEdited.find("td:nth-child(2)").text($("#waypointLatitude").val());
@@ -102,6 +102,17 @@
                     }
                 });
 
+
+                $("#savePoiBtn").on("click", function(e){
+                    if (rowBeingEdited) {
+                        rowBeingEdited.find("td:nth-child(1)").text($("#poiName").val());
+                        rowBeingEdited.find("td:nth-child(2)").text($("#poiLatitude").val());
+                        rowBeingEdited.find("td:nth-child(3)").text($("#poiLongitude").val());
+                        rowBeingEdited.find("td:nth-child(4)").text($("#poiRadius").val());
+                    } else {
+                        // it was an addition.
+                    }
+                });
 
 
                 $("#addWaypointBtn").on("click", function(e){
@@ -113,18 +124,15 @@
                 });
 
 
-
                 $("#addPoiBtn").on("click", function(e){
                     rowBeingEdited = null;
                     $("#poiModal").modal("show");
                 });
 
 
-
                 $("#waypointTable,#poiTable").on("click", ".deleteWaypointLink,.deletePoiLink", function(e){
                     $(this).closest("tr").remove();
                 });
-
 
                 
                 $("#waypointTable").on("click", ".editWaypointLink", function(e){
@@ -136,7 +144,6 @@
                     $("#waypointModal").modal("show");
 
                 });
-
 
 
                 $("#poiTable").on("click", ".editPoiLink", function(e){
@@ -229,7 +236,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        <button id="saveWaypoint" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                                        <button id="saveWaypointBtn" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -316,7 +323,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        <button id="saveWaypoint" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                                        <button id="savePoiBtn" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
                                     </div>
                                 </div>
                             </div>
