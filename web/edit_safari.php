@@ -102,10 +102,8 @@
                     }
                 });
 
-                $("#waypointModal").on("show.bs.modal", function(e){
 
-                });
-                
+
                 $("#addWaypointBtn").on("click", function(e){
                     rowBeingEdited = null;
                     $("#waypointSequence").val("");
@@ -114,9 +112,19 @@
                     $("#waypointModal").modal("show");
                 });
 
+
+
+                $("#addPoiBtn").on("click", function(e){
+                    rowBeingEdited = null;
+
+                });
+
+
+
                 $("#waypointTable,#poiTable").on("click", ".deleteWaypointLink,.deletePoiLink", function(e){
                     $(this).closest("tr").remove();
                 });
+
 
                 
                 $("#waypointTable").on("click", ".editWaypointLink", function(e){
@@ -128,6 +136,7 @@
                     $("#waypointModal").modal("show");
 
                 });
+
 
 
                 $("#poiTable").on("click", ".editPoiLink", function(e){
@@ -179,7 +188,6 @@
                             </tbody>
                         </table>
 
-                        <!-- Button trigger modal -->
                         <button id="addWaypointBtn" class="btn btn-primary">
                             Add Waypoint
                         </button>
@@ -236,6 +244,32 @@
                                 ?>
                             </tbody>
                         </table>
+
+                        <button id="addPoiBtn" class="btn btn-primary">
+                            Add POI
+                        </button>
+                         <!-- Modal -->
+                        <div class="modal fade" id="poiModal" tabindex="-1" role="dialog" aria-labelledby="poiModalTitle" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title" id="poiModalTitle">Waypoint Form</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="text" placeholder="Sequence" id="poiName"/>
+                                        <input type="text" placeholder="Latitude" id="poiLatitude"/>
+                                        <input type="text" placeholder="Longitude" id="poiLongitude"/>
+                                        <input type="text" placeholder="Longitude" id="poiRadius"/>
+                                        <input type="file" id="poiMediaFile"/>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button id="saveWaypoint" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 
             </div>
