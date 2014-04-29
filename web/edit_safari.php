@@ -107,6 +107,8 @@
                     var tr = $(this).closest("tr");
 
                     $("#waypointSequence").val(tr.find("td:nth-child(1)").text());
+                    $("#waypointLatitude").val(tr.find("td:nth-child(2)").text());
+                    $("#waypointLongitude").val(tr.find("td:nth-child(3)").text());
                     $("#waypointModal").modal("show");
 
                 });
