@@ -96,11 +96,19 @@
                 });
                 
                 $("#addWaypointBtn").on("click", function(e){
-                    $("#waypointModal").modal("show");   
+                    $("#waypointModal").modal("show");
                 });
 
                 $("#waypointTable").on("click", ".deleteWaypointLink", function(e){
                     $(this).closest("tr").remove();
+                });
+
+                $("#waypointTable").on("click", ".editWaypointLink", function(e){
+                    var tr = $(this).closest("tr");
+
+                    $("#waypointSequence").val(tr.find("td:nth-child(1)").text());
+                    $("#waypointModal").modal("show");
+
                 });
 
             });
