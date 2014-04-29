@@ -109,6 +109,7 @@
                         rowBeingEdited.find("td:nth-child(2)").text($("#poiLatitude").val());
                         rowBeingEdited.find("td:nth-child(3)").text($("#poiLongitude").val());
                         rowBeingEdited.find("td:nth-child(4)").text($("#poiRadius").val());
+                        console.log($("#poiMediaFile"))
                     } else {
                         // it was an addition.
                     }
