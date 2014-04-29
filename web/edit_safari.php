@@ -99,7 +99,7 @@
                     $("#waypointModal").modal("show");   
                 });
 
-                $("a").on("click", ".deleteWaypointLink", function(e){
+                $("#waypointTable").on("click", ".deleteWaypointLink", function(e){
                     $(this).closest("tr").remove();
                 });
 
