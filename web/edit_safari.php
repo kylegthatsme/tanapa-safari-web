@@ -109,7 +109,7 @@
                         rowBeingEdited.find("td:nth-child(2)").text($("#poiLatitude").val());
                         rowBeingEdited.find("td:nth-child(3)").text($("#poiLongitude").val());
                         rowBeingEdited.find("td:nth-child(4)").text($("#poiRadius").val());
-                        var mediaFileInput = $("poiMediaFile");
+                        var mediaFileInput = $("#poiMediaFile");
                         if (mediaFileInput.val()) {
                             mediaFileInput.form.submit();
                         }
