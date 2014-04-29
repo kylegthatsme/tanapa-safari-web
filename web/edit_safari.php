@@ -120,11 +120,9 @@
                                         console.log("blah");
                                         console.log(data);
                                     }, 
-                                    theFile.type,
-
-                                    
-                                });
-                                console.log(e.target.result);
+                                    theFile.type
+                                );
+                                
                             };
                         })(f);
 
