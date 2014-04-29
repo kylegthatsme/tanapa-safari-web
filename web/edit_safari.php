@@ -140,7 +140,7 @@
 
 
                 $("#poiTable").on("click", ".editPoiLink", function(e){
-                    rowBeingEdited = $(this).closes("tr");
+                    rowBeingEdited = $(this).closest("tr");
                     $("#poiName").val(rowBeingEdited.find("td:nth-child(1)").text());
                     $("#poiLatitude").val(rowBeingEdited.find("td:nth-child(2)").text());
                     $("#poiLongitude").val(rowBeingEdited.find("td:nth-child(3)").text());
