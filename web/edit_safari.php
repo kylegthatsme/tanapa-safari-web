@@ -274,37 +274,38 @@
                                         <h4 class="modal-title" id="poiModalTitle">Point of Interest Form</h4>
                                     </div>
                                     <div class="modal-body">
-                                        
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">Name</label>
-                                            <div class="col-sm-4">
-                                                <input class="form-control" type="text" placeholder="Name" id="poiName"/>
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Name</label>
+                                                <div class="col-sm-4">
+                                                    <input class="form-control" type="text" placeholder="Name" id="poiName"/>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">Latitude</label>
-                                            <div class="col-sm-4">
-                                                <input class="form-control" type="text" placeholder="Latitude" id="poiLatitude"/>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Latitude</label>
+                                                <div class="col-sm-4">
+                                                    <input class="form-control" type="text" placeholder="Latitude" id="poiLatitude"/>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">Longitude</label>
-                                            <div class="col-sm-4">
-                                                <input class="form-control" type="text" placeholder="Longitude" id="poiLongitude"/>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Longitude</label>
+                                                <div class="col-sm-4">
+                                                    <input class="form-control" type="text" placeholder="Longitude" id="poiLongitude"/>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">Radius</label>
-                                            <div class="col-sm-4">
-                                                <input class="form-control" type="text" placeholder="Radius" id="poiRadius"/>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Radius</label>
+                                                <div class="col-sm-4">
+                                                    <input class="form-control" type="text" placeholder="Radius" id="poiRadius"/>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">Image</label>
-                                            <div class="col-sm-4">
-                                                <input type="file" id="poiMediaFile"/>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Image</label>
+                                                <div class="col-sm-4">
+                                                    <input type="file" id="poiMediaFile"/>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </form>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
