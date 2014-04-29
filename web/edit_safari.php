@@ -145,7 +145,6 @@
                     $("#poiLatitude").val(rowBeingEdited.find("td:nth-child(2)").text());
                     $("#poiLongitude").val(rowBeingEdited.find("td:nth-child(3)").text());
                     $("#poiRadius").val(rowBeingEdited.find("td:nth-child(4)").text());
-                    console.log($("#poiMediaFile"));
                     $("#poiModal").modal("show");
                 });
 
@@ -247,6 +246,8 @@
                                     <th>Longitude</th>
                                     <th>Radius</th>
                                     <th>Image</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
                                 </tr>
                             </thead>
                             <tbody>
