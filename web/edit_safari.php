@@ -104,7 +104,7 @@
 
 
                 $("#savePoiBtn").on("click", function(e){
-                    
+                    /*
                     var f = $("#poiMediaFile").get(0).files[0];
                     if (f.type.match('image.*')) {
 
@@ -130,6 +130,20 @@
                         reader.readAsDataURL(f);
 
                     }
+                    */
+
+                    var formData = new FormData($("#poiMediaFileForm")[0]);
+                    $.ajax({
+                        url: 'media.php',  //Server script to process data
+                        type: 'POST',
+                        success: function(data){console.log(data)},
+                        // Form data
+                        data: formData,
+                        //Options to tell jQuery not to process data or worry about content-type.
+                        cache: false,
+                        contentType: false,
+                        processData: false
+                    });
   
                     if (rowBeingEdited) {
                         rowBeingEdited.find("td:nth-child(1)").text($("#poiName").val());
@@ -340,6 +354,8 @@
                                                     <input class="form-control" type="text" placeholder="Radius" id="poiRadius"/>
                                                 </div>
                                             </div>
+                                        </form>
+                                        <form enctype="multipart/form-data" id="poiMediaFileForm">
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Image</label>
                                                 <div class="col-sm-4">
