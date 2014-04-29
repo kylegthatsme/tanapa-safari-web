@@ -119,7 +119,7 @@
                                 span.innerHTML = ['<img class="thumb" src="', e.target.result, '" title="', escape(theFile.name), '"/>'].join('');
                                 document.getElementById('list').insertBefore(span, null);
                                 */
-                                console.log(theFile);
+                                console.log(e.target.result);
                             };
                         })(f);
 
