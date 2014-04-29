@@ -113,7 +113,7 @@
                             type: 'POST',
                             success: function(data){
                                 var response = JSON.parse(data);
-                                rowBeingEdited.find("td:nth-child(5)").text(response.url);
+                                rowBeingEdited.find("td:nth-child(5)").text("<a href='" + data.url.substring(1) + "'>" + data.url.substring(1) + "</a>");
                             },
                             // Form data
                             data: formData,
