@@ -203,8 +203,10 @@
                                     <div class="modal-body">
                                         <form class="form-horizontal">
                                             <div class="form-group">
-                                                <label>Sequence</label>
-                                                <input class="form-control" type="text" placeholder="Sequence" id="waypointSequence"/>
+                                                <label class="col-md-2">Sequence</label>
+                                                <div class="col-md-4">
+                                                    <input class="form-control" type="text" placeholder="Sequence" id="waypointSequence"/>
+                                                </div>
                                             </div>
                                             <div class="form-group">
                                                 <input class="form-control" type="text" placeholder="Latitude" id="waypointLatitude"/>
