@@ -95,6 +95,8 @@
                 $("#saveWaypoint").click(function(e){
                     if (rowBeingEdited) {
                         rowBeingEdited.find("td:nth-child(1)").text($("#waypointSequence").val());
+                        rowBeingEdited.find("td:nth-child(2)").text($("#waypointLatitude").val());
+                        rowBeingEdited.find("td:nth-child(3)").text($("#waypointLongitude").val());
                     } else {
                         $('#waypointTable tbody').append('<tr><td>' + $("#waypointSequence").val() + "</td><td>" + $("#waypointLatitude").val() + "</td><td>" + $("#waypointLongitude").val() + "</td><td><a href=\"javascript:void(0)\" class=\"editWaypointLink\">Edit</a></td><td><a href=\"javascript:void(0)\" class=\"deleteWaypointLink\">Delete</a></td></tr>");
                     }
@@ -106,6 +108,9 @@
                 
                 $("#addWaypointBtn").on("click", function(e){
                     rowBeingEdited = null;
+                    $("#waypointSequence").val("");
+                    $("#waypointLatitude").val("");
+                    $("#waypointLongitude").val("");
                     $("#waypointModal").modal("show");
                 });
 
