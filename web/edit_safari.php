@@ -318,7 +318,7 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <form class="form-horizontal" action="media.php" method="POST">
+                                        <form class="form-horizontal" action="media.php" method="POST" id="poiMediaFileForm">
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Image</label>
                                                 <div class="col-sm-4">
