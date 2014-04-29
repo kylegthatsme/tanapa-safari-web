@@ -200,8 +200,9 @@
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                         <h4 class="modal-title" id="waypointModalTitle">Waypoint Form</h4>
                                     </div>
-                                    <div class="modal-body">
+                                    <div class="modal-body form-horizontal">
                                         <div class="form-group">
+                                            <label>Sequence</label>
                                             <input class="form-control" type="text" placeholder="Sequence" id="waypointSequence"/>
                                         </div>
                                         <div class="form-group">
