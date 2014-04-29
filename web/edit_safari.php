@@ -146,7 +146,7 @@
                     $("#poiLongitude").val(rowBeingEdited.find("td:nth-child(3)").text());
                     $("#poiRadius").val(rowBeingEdited.find("td:nth-child(4)").text());
                     console.log($("#poiMediaFile"));
-
+                    $("#poiModal").modal("show");
                 });
 
             });
