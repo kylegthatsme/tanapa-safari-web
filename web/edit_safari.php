@@ -116,7 +116,7 @@
 
                 $("#addPoiBtn").on("click", function(e){
                     rowBeingEdited = null;
-
+                    $("#waypointModal").modal("show");
                 });
 
 
