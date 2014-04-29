@@ -114,7 +114,7 @@
                     $("#waypointModal").modal("show");
                 });
 
-                $("#waypointTable,#poiTable").on("click", ".deleteWaypointLink", function(e){
+                $("#waypointTable,#poiTable").on("click", ".deleteWaypointLink,.deletePoiLink", function(e){
                     $(this).closest("tr").remove();
                 });
 
