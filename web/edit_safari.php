@@ -254,13 +254,13 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        <h4 class="modal-title" id="poiModalTitle">Waypoint Form</h4>
+                                        <h4 class="modal-title" id="poiModalTitle">Point of Interest Form</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="text" placeholder="Sequence" id="poiName"/>
-                                        <input type="text" placeholder="Latitude" id="poiLatitude"/>
-                                        <input type="text" placeholder="Longitude" id="poiLongitude"/>
-                                        <input type="text" placeholder="Longitude" id="poiRadius"/>
+                                        <input class="form-control" type="text" placeholder="Sequence" id="poiName"/>
+                                        <input class="form-control" type="text" placeholder="Latitude" id="poiLatitude"/>
+                                        <input class="form-control" type="text" placeholder="Longitude" id="poiLongitude"/>
+                                        <input class="form-control" type="text" placeholder="Longitude" id="poiRadius"/>
                                         <input type="file" id="poiMediaFile"/>
                                     </div>
                                     <div class="modal-footer">
