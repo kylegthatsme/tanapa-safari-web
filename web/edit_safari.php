@@ -104,12 +104,35 @@
 
 
                 $("#savePoiBtn").on("click", function(e){
+                    
+                    var f = $("#poiMediaFile").files[0];
+                    if (f.type.match('image.*')) {
+
+                        var reader = new FileReader();    
+
+                        // Closure to capture the file information.
+                        reader.onload = (function(theFile) {
+                            return function(e) {
+                                /*
+                                // Render thumbnail.
+                                var span = document.createElement('span');
+                                span.innerHTML = ['<img class="thumb" src="', e.target.result, '" title="', escape(theFile.name), '"/>'].join('');
+                                document.getElementById('list').insertBefore(span, null);
+                                */
+                                console.log(theFile);
+                            };
+                        })(f);
+
+                        // Read in the image file as a data URL.
+                        reader.readAsDataURL(f);
+
+                    }
+  
                     if (rowBeingEdited) {
                         rowBeingEdited.find("td:nth-child(1)").text($("#poiName").val());
                         rowBeingEdited.find("td:nth-child(2)").text($("#poiLatitude").val());
                         rowBeingEdited.find("td:nth-child(3)").text($("#poiLongitude").val());
                         rowBeingEdited.find("td:nth-child(4)").text($("#poiRadius").val());
-                        $("#poiMediaFileForm").submit();
                     } else {
                         // it was an addition.
                     }
