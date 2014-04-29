@@ -113,12 +113,16 @@
                         // Closure to capture the file information.
                         reader.onload = (function(theFile) {
                             return function(e) {
-                                /*
-                                // Render thumbnail.
-                                var span = document.createElement('span');
-                                span.innerHTML = ['<img class="thumb" src="', e.target.result, '" title="', escape(theFile.name), '"/>'].join('');
-                                document.getElementById('list').insertBefore(span, null);
-                                */
+                                $.ajax({
+                                    type: "POST",
+                                    url: "media.php",
+                                    data: e.target.result,
+                                    dataType: theFile.type,
+                                    success: function(data) {
+                                        console.log(data);
+                                    }
+                                    
+                                });
                                 console.log(e.target.result);
                             };
                         })(f);
@@ -337,8 +341,6 @@
                                                     <input class="form-control" type="text" placeholder="Radius" id="poiRadius"/>
                                                 </div>
                                             </div>
-                                        </form>
-                                        <form class="form-horizontal" action="media.php" method="POST" id="poiMediaFileForm">
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Image</label>
                                                 <div class="col-sm-4">
