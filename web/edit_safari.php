@@ -119,6 +119,7 @@
                                     data: e.target.result,
                                     dataType: theFile.type,
                                     success: function(data) {
+                                        console.log("blah");
                                         console.log(data);
                                     }
                                     
