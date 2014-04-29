@@ -140,6 +140,12 @@
 
 
                 $("#poiTable").on("click", ".editPoiLink", function(e){
+                    rowBeingEdited = $(this).closes("tr");
+                    $("#poiName").val(rowBeingEdited.find("td:nth-child(1)").text());
+                    $("#poiLatitude").val(rowBeingEdited.find("td:nth-child(2)").text());
+                    $("#poiLongitude").val(rowBeingEdited.find("td:nth-child(3)").text());
+                    $("#poiRadius").val(rowBeingEdited.find("td:nth-child(4)").text());
+                    console.log($("#poiMediaFile"));
 
                 });
 
