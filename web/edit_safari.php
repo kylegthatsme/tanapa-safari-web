@@ -209,10 +209,16 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" type="text" placeholder="Latitude" id="waypointLatitude"/>
+                                                <label class="col-sm-2 control-label">Latitude</label>
+                                                <div class="col-sm-4">
+                                                    <input class="form-control" type="text" placeholder="Latitude" id="waypointLatitude"/>
+                                                </div>
                                             </div>
-                                            <div class="form-group">    
-                                                <input class="form-control" type="text" placeholder="Longitude" id="waypointLongitude"/>
+                                            <div class="form-group">   
+                                                <label class="col-sm-2 control-label">Longitude</label>
+                                                <div class="col-sm-4"> 
+                                                    <input class="form-control" type="text" placeholder="Longitude" id="waypointLongitude"/>
+                                                </div>
                                             </div>
                                         </form>
                                     </div>
