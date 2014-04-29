@@ -192,7 +192,7 @@
                             Add Waypoint
                         </button>
 
-                        <!-- Modal -->
+                        <!-- Waypoint Modal -->
                         <div class="modal fade" id="waypointModal" tabindex="-1" role="dialog" aria-labelledby="waypointModalTitle" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -265,7 +265,7 @@
                         <button id="addPoiBtn" class="btn btn-primary">
                             Add POI
                         </button>
-                         <!-- Modal -->
+                         <!-- POI Modal -->
                         <div class="modal fade" id="poiModal" tabindex="-1" role="dialog" aria-labelledby="poiModalTitle" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -274,20 +274,36 @@
                                         <h4 class="modal-title" id="poiModalTitle">Point of Interest Form</h4>
                                     </div>
                                     <div class="modal-body">
+                                        
                                         <div class="form-group">
-                                            <input class="form-control" type="text" placeholder="Sequence" id="poiName"/>
+                                            <label class="col-sm-2 control-label">Name</label>
+                                            <div class="col-sm-4">
+                                                <input class="form-control" type="text" placeholder="Name" id="poiName"/>
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" type="text" placeholder="Latitude" id="poiLatitude"/>
+                                            <label class="col-sm-2 control-label">Latitude</label>
+                                            <div class="col-sm-4">
+                                                <input class="form-control" type="text" placeholder="Latitude" id="poiLatitude"/>
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" type="text" placeholder="Longitude" id="poiLongitude"/>
+                                            <label class="col-sm-2 control-label">Longitude</label>
+                                            <div class="col-sm-4">
+                                                <input class="form-control" type="text" placeholder="Longitude" id="poiLongitude"/>
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" type="text" placeholder="Radius" id="poiRadius"/>
+                                            <label class="col-sm-2 control-label">Radius</label>
+                                            <div class="col-sm-4">
+                                                <input class="form-control" type="text" placeholder="Radius" id="poiRadius"/>
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="file" id="poiMediaFile"/>
+                                            <label class="col-sm-2 control-label">Image</label>
+                                            <div class="col-sm-4">
+                                                <input type="file" id="poiMediaFile"/>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
