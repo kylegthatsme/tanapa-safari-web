@@ -201,9 +201,15 @@
                                         <h4 class="modal-title" id="waypointModalTitle">Waypoint Form</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="text" placeholder="Sequence" id="waypointSequence"/>
-                                        <input type="text" placeholder="Latitude" id="waypointLatitude"/>
-                                        <input type="text" placeholder="Longitude" id="waypointLongitude"/>
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" placeholder="Sequence" id="waypointSequence"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" placeholder="Latitude" id="waypointLatitude"/>
+                                        </div>
+                                        <div class="form-group">    
+                                            <input class="form-control" type="text" placeholder="Longitude" id="waypointLongitude"/>
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -263,11 +269,11 @@
                                         <div class="form-group">
                                             <input class="form-control" type="text" placeholder="Latitude" id="poiLatitude"/>
                                         </div>
-                                        <div>
+                                        <div class="form-group">
                                             <input class="form-control" type="text" placeholder="Longitude" id="poiLongitude"/>
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" type="text" placeholder="Longitude" id="poiRadius"/>
+                                            <input class="form-control" type="text" placeholder="Radius" id="poiRadius"/>
                                         </div>
                                         <div class="form-group">
                                             <input type="file" id="poiMediaFile"/>
