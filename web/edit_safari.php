@@ -114,10 +114,11 @@
                     $("#waypointModal").modal("show");
                 });
 
-                $("#waypointTable").on("click", ".deleteWaypointLink", function(e){
+                $("#waypointTable,#poiTable").on("click", ".deleteWaypointLink", function(e){
                     $(this).closest("tr").remove();
                 });
 
+                
                 $("#waypointTable").on("click", ".editWaypointLink", function(e){
 
                     rowBeingEdited = $(this).closest("tr");
@@ -125,6 +126,11 @@
                     $("#waypointLatitude").val(rowBeingEdited.find("td:nth-child(2)").text());
                     $("#waypointLongitude").val(rowBeingEdited.find("td:nth-child(3)").text());
                     $("#waypointModal").modal("show");
+
+                });
+
+
+                $("#poiTable").on("click", ".editPoiLink", function(e){
 
                 });
 
@@ -202,27 +208,33 @@
                     </div>
                     <div class="panel panel-default">
                         <div class="panel-heading">Points of Interest</div>
-                        <table class="table table-striped">
-                            <tr>
-                                <th>Name</th>
-                                <th>Latitude</th>
-                                <th>Longitude</th>
-                                <th>Radius</th>
-                                <th>Image</th>
-                            </tr>
-                            <?php
-                                foreach($points_of_interest as $poi) {
-                                    $media_url = isset($poi["media"]) ? substr($poi["media"]["url"], 1) : null;
-                                    $media_val = !is_null($media_url) ? "<a href=\"" . $media_url . "\">" . $media_url . "</a>" : "&nbsp;";
-                                    echo "<tr>";
-                                    echo "<td>" . $poi["name"] . "</td>";
-                                    echo "<td>" . $poi["latitude"] . "</td>";
-                                    echo "<td>" . $poi["longitude"] . "</td>";
-                                    echo "<td>" . $poi["radius"] . "</td>";
-                                    echo "<td>" . $media_val . "</td>";
-                                    echo "</tr>";
-                                }
-                            ?>
+                        <table id="poiTable" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Latitude</th>
+                                    <th>Longitude</th>
+                                    <th>Radius</th>
+                                    <th>Image</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                    foreach($points_of_interest as $poi) {
+                                        $media_url = isset($poi["media"]) ? substr($poi["media"]["url"], 1) : null;
+                                        $media_val = !is_null($media_url) ? "<a href=\"" . $media_url . "\">" . $media_url . "</a>" : "&nbsp;";
+                                        echo "<tr>";
+                                        echo "<td>" . $poi["name"] . "</td>";
+                                        echo "<td>" . $poi["latitude"] . "</td>";
+                                        echo "<td>" . $poi["longitude"] . "</td>";
+                                        echo "<td>" . $poi["radius"] . "</td>";
+                                        echo "<td>" . $media_val . "</td>";
+                                        echo "<td><a class=\"editPoiLink\" href=\"javascript:void(0)\">Edit</a></td>"; 
+                                        echo "<td><a class=\"deletePoiLink\" href=\"javascript:void(0)\">Delete</a></td>"; 
+                                        echo "</tr>";
+                                    }
+                                ?>
+                            </tbody>
                         </table>
                     </div>
                 
