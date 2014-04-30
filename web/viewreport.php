@@ -11,7 +11,7 @@ if(isset($_POST['delete']))
 		$stmt->bind_param('i', $delete_id);
 		$stmt->execute();
 		$stmt->close();
-		$header('Location: userreports.php');
+		header('Location: userreports.php');
     }
 ?>
 <?php
