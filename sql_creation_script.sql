@@ -6,6 +6,9 @@ DROP TABLE IF EXISTS USER_LOG;
 DROP TABLE IF EXISTS USER;
 DROP TABLE IF EXISTS SAFARI;
 DROP TABLE IF EXISTS MEDIA;
+DROP TABLE IF EXISTS ANIMAL_GROUP;
+DROP TABLE IF EXISTS ANIMAL_SPECIFIC;
+
 
 DROP TABLE IF EXISTS safari_points_of_interest;
 DROP TABLE IF EXISTS safari_waypoints;
@@ -15,6 +18,8 @@ DROP TABLE IF EXISTS user_log;
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS safari;
 DROP TABLE IF EXISTS media;
+DROP TABLE IF EXISTS animal_group;
+DROP TABLE IF EXISTS animal_specific;
 
 
 CREATE TABLE USER
@@ -101,4 +106,27 @@ CREATE TABLE SAFARI_POINTS_OF_INTEREST
 	radius			INTEGER(11) NOT NULL,
 	PRIMARY KEY (id),
 	Foreign Key(safari_id) references SAFARI(id)
+);
+CREATE TABLE ANIMAL_GROUP
+(
+	id				INTEGER(11) NOT NULL auto_increment,
+	name			VARCHAR(80) NOT NULL,
+	description		TEXT,
+	header_media_id	INTEGER(30),
+	footer_media_id	INTEGER(30),
+	tile_media_id	INTEGER(30),
+	PRIMARY KEY (id),
+	Foreign Key (header_media_id) references MEDIA(id),
+	Foreign Key (footer_media_id) references MEDIA(id),
+	Foreign Key (tile_media_id) references MEDIA(id)
+);
+CREATE TABLE ANIMAL_SPECIFIC
+(
+	id				INTEGER(20) NOT NULL auto_increment,
+	name			VARCHAR(80) NOT NULL,
+	description		TEXT,
+	media_id        INTEGER(20) NOT NULL, 
+    group_id		INTEGER(255) NOT NULL,
+	PRIMARY KEY (id),
+	Foreign Key(group_id) references ANIMAL_GROUP(id)
 );

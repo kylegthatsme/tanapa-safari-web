@@ -23,6 +23,26 @@
 							</li>
 						</ul>
 					</li>
+					<li class="dropdown">
+						<a id="safarisdrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+							Animal Glossary
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="safarisdrop">
+							<li>
+								<a href="view_animals.php">Edit Animals</a>
+							</li>
+							<li>
+								<a href="newanimalgroup.php">New Animal Group</a>
+							</li>
+							<li>
+								<a href="newspecificanimal.php">New Specific Animal</a>
+							</li>
+							<li>
+								<a href="animals.php">Animal Groups JSON</a>
+							</li>
+						</ul>
+					</li>
 					<li>
 						<a href="userlocations.php">User Log</a>
 					</li>

@@ -1,1 +1,4 @@
 web/config/*
+web/media/*
+**.DS_Store
+**.dmp
