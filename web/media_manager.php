@@ -17,7 +17,7 @@
 				$("#mediaFileInput").on("change", function(e){
 					console
 					if (e.target.value) {
-					/*
+					
 						var formData = new FormData(e.target.form);
 						$.ajax({
 							url: 'media.php',  //Server script to process data
@@ -31,7 +31,7 @@
 							cache: false,
 							contentType: false,
 							processData: false
-						});   */
+						});   
 					}
 				});
 			});           
