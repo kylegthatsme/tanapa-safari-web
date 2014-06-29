@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         	"asp.header_media_id, hm.type header_media_type, hm.url header_media_url, ".
         	"asp.footer_media_id, fm.type footer_media_type, fm.url footer_media_url, ".
         	"asp.tile_media_id, tm.type tile_media_type, tm.url tile_media_url FROM ANIMAL_SPECIFIC asp ".
-        	"JOIN MEDIA hm ON hm.id = as.header_media_id JOIN MEDIA fm ".
+        	"JOIN MEDIA hm ON hm.id = asp.header_media_id JOIN MEDIA fm ".
         	"ON fm.id = asp.footer_media_id JOIN MEDIA tm ON tm.id = ".
         	"asp.tile_media_id WHERE asp.id = ?");
         $stmt->bind_param('i', $_GET['id']);
