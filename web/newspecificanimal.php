@@ -31,7 +31,7 @@ if(isset($_POST['submit']))
 	</head>
 	<body>
 		<?php
-			include 'navbar.php'
+			include 'navbar.php';
 			$stmt = $db_conn->prepare("SELECT MEDIA.url, MEDIA.id FROM MEDIA LEFT JOIN REPORT ON MEDIA.id = REPORT.report_media_id");
 			$stmt->execute();
 			$stmt->bind_result($media_url, $media_id);
