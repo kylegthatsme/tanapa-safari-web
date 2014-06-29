@@ -175,10 +175,11 @@ else if(isset($_POST['poi_delete']))
 										</thead>
 										<tbody>
 											<?php
-												$stmt = $db_conn->prepare("SELECT as.id, as.name, as.description, ".
-													"m.url, m1.url, m2.url FROM ANIMAL_SPECIFIC as LEFT JOIN MEDIA m ON as.header_media_id = m.id LEFT JOIN MEDIA m1 ON ".
-													"as.footer_media_id = m1.id LEFT JOIN MEDIA m2 ON as.tile_media_id = m2.id".
-													" WHERE as.group_id= ?");
+											//SELECT asp.id, asp.name, asp.description, m.url, m1.url, m2.url FROM ANIMAL_SPECIFIC asp LEFT JOIN MEDIA m ON asp.header_media_id = m.id LEFT JOIN MEDIA m1 ON asp.footer_media_id = m1.id LEFT JOIN MEDIA m2 ON asp.tile_media_id = m2.id WHERE asp.group_id= 11;
+												$stmt = $db_conn->prepare("SELECT asp.id, asp.name, asp.description, ".
+													"m.url, m1.url, m2.url FROM ANIMAL_SPECIFIC asp LEFT JOIN MEDIA m ON asp.header_media_id = m.id LEFT JOIN MEDIA m1 ON ".
+													"asp.footer_media_id = m1.id LEFT JOIN MEDIA m2 ON asp.tile_media_id = m2.id".
+													" WHERE asp.group_id= ?");
 												$stmt->bind_param('i', $group);
 												$stmt->execute();
 												$stmt->bind_result($poi_id, $poi_name, $poi_description, $header_url, $footer_url, $tile_url);
