@@ -17,7 +17,7 @@ if (isset ( $_FILES ['file'] )) {
 }
 
 $extension = $mime_type == "video/mp4" ? ".mp4" : ".jpg";
-$new_path = "media/" . uniqid() . $extension;
+$new_path = "media/" . $_FILES['file']['name'];
 $media_url = "/" . $new_path;
 $fp = fopen($new_path, "w");
 

@@ -8,15 +8,15 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     if (empty($_GET)) {
         $results = array("results" => array());
-        $stmt = $db_conn->prepare("SELECT ANIMAL_SPECIFIC.id, ANIMAL_SPECIFIC.name, ANIMAL_SPECIFIC.description, media_id, MEDIA.type media_type, MEDIA.url media_url FROM ANIMAL_SPECIFIC JOIN MEDIA MEDIA ON MEDIA.id = ANIMAL_SPECIFIC.media_id");
+        $stmt = $db_conn->prepare("SELECT ANIMAL_SPECIFIC.id, ANIMAL_SPECIFIC.name, ANIMAL_SPECIFIC.description, tile_media_id, TILE_MEDIA.type tile_media_type, TILE_MEDIA.url tile_media_url FROM ANIMAL_SPECIFIC JOIN MEDIA TILE_MEDIA ON TILE_MEDIA.id = ANIMAL_SPECIFIC.tile_media_id");
         $stmt->execute();
-        $stmt->bind_result($group_id, $group_name, $group_description, $media_id, $media_type, $media_url);
+        $stmt->bind_result($group_id, $group_name, $group_description, $tile_media_id, $tile_media_type, $tile_media_url);
         while ($stmt->fetch()) {
             $results["results"][] = array(
                 "id" => $group_id,
                 "name" => $group_name,
                 "description" => $group_description,
-                "media_id" => $tile_media_id,
+                "tile_media_id" => $tile_media_id,
                 "tile_media_type" => $tile_media_type,
                 "tile_media_url" => $tile_media_url
             );

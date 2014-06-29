@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
         $stmt->close();
         echo json_encode($result);
-    }
+   }
 
 }
 ?>
