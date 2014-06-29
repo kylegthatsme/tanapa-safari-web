@@ -9,7 +9,7 @@ if(isset($_POST['submit']))
 
 		$stmt = $db_conn->prepare("INSERT INTO ANIMAL_SPECIFIC(name, description, group_id, ".
 			"header_media_id, footer_media_id), tile_media_id)) values(?, ?, ?, ?, ?, ?)");
-		$stmt->bind_param('ssii', 
+		$stmt->bind_param('ssiiii', 
 			$_POST['inputName'], 
 			$_POST['inputDescription'], 
 			$_POST['selectGroup'], 
