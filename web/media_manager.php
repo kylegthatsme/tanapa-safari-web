@@ -17,6 +17,7 @@
 				$("#mediaFileInput").on("change", function(e){
 					console
 					if (e.target.value) {
+					/*
 						var formData = new FormData(e.target.form);
 						$.ajax({
 							url: 'media.php',  //Server script to process data
@@ -30,7 +31,7 @@
 							cache: false,
 							contentType: false,
 							processData: false
-						});   
+						});   */
 					}
 				});
 			});           
@@ -46,11 +47,11 @@
 				<div id="inner">
 					<div class="accordion" id="loc-acc">
 						<div class="accordion-group">
-							//<div class="accordion-heading">
-							//	<a class="btn btn-large btn-block btn-inverse" data-toggle="collapse" data-parent="#loc-acc" href="#collapseOne">
-								//	Media
-								//</a>
-							//</div>
+							<div class="accordion-heading">
+								<a class="btn btn-large btn-block btn-inverse" data-toggle="collapse" data-parent="#loc-acc" href="#collapseOne">
+									Media
+								</a>
+							</div>
 							<div id="collapseOne" class="accordion-body collapse">
 								<div class="accordion-inner">
 									<table class="table table-hover">
