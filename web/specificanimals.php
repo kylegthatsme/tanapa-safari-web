@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     } elseif (isset($_GET['id'])) {
 
-        // If an ID is sent, retreive that animal groups's details and return them.
+        // Ifn ID is sent, retreive that animal groups's details and return them.
         $stmt = $db_conn->prepare("SELECT asp.id, asp.name, asp.description, ".
         	"asp.header_media_id, hm.type header_media_type, hm.url header_media_url, ".
         	"asp.footer_media_id, fm.type footer_media_type, fm.url footer_media_url, ".
