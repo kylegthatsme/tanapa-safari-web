@@ -168,18 +168,25 @@ else if(isset($_POST['poi_delete']))
 												<th>ID</th>
 												<th>Name</th>
 												<th>Description</th>
-												<th>Image</th>
-												
+												<th>Header Image</th>
+												<th>Footer Image</th>
+												<th>Tile Image</th>
 											</tr>
 										</thead>
 										<tbody>
 											<?php
-												$stmt = $db_conn->prepare("SELECT ANIMAL_SPECIFIC.id, ANIMAL_SPECIFIC.name, ANIMAL_SPECIFIC.description, MEDIA.url FROM ANIMAL_SPECIFIC LEFT JOIN MEDIA ON ANIMAL_SPECIFIC.media_id = MEDIA.id WHERE ANIMAL_SPECIFIC.group_id= ?");
+												$stmt = $db_conn->prepare("SELECT as.id, as.name, as.description, ".
+													"m.url, m1.url, m2.url FROM ANIMAL_SPECIFIC as LEFT JOIN MEDIA m ON as.header_media_id = m.id LEFT JOIN MEDIA m1 ".
+													"as.footer_media_id = m1.id LEFT JOIN MEDIA m2 ON as.tile_media_id = m2.id".
+													" WHERE as.group_id= ?");
 												$stmt->bind_param('i', $group);
 												$stmt->execute();
-												$stmt->bind_result($poi_id, $poi_name, $poi_description, $m_url);
-												while($stmt->fetch()){	
-													$m_url = ltrim($m_url, "/");?>
+												$stmt->bind_result($poi_id, $poi_name, $poi_description, $header_url, $footer_url, $tile_url);
+												while($stmt->fetch()) {	
+													$header_url = ltrim($header_url, "/");
+													$footer_url = ltrim($footer_url, "/");
+													$tile_url = ltrim($tile_url, "/");
+												?>
 													<tr>
 														<td>
 															<?php echo $poi_id;?>
@@ -193,7 +200,13 @@ else if(isset($_POST['poi_delete']))
 																	//$p_names[] = $poi_name;?>
 														</td>
 														<td>
-															<img class='offset3 span6' src="<?php echo $m_url;?>">
+															<img class='offset3 span6' src="<?php echo $header_url;?>">
+														</td>
+														<td>
+															<img class='offset3 span6' src="<?php echo $footer_url;?>">
+														</td>
+														<td>
+															<img class='offset3 span6' src="<?php echo $tile_url;?>">
 														</td>
 												
 														<td>

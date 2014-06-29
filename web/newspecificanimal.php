@@ -6,12 +6,16 @@
 <?php
 if(isset($_POST['submit']))
     {
-        $p_name = $_POST['inputName'];
-        $p_description = $_POST['inputDescription'];
-		$p_group  = $_POST['selectGroup'];
-		$p_img = $_POST['selectImage'];
-		$stmt = $db_conn->prepare("INSERT INTO ANIMAL_SPECIFIC(name, description, group_id, media_id) values(?, ?, ?, ?)");
-		$stmt->bind_param('ssii', $p_name, $p_description, $p_group, $p_img);
+
+		$stmt = $db_conn->prepare("INSERT INTO ANIMAL_SPECIFIC(name, description, group_id, ".
+			"header_media_id, footer_media_id), tile_media_id)) values(?, ?, ?, ?, ?, ?)");
+		$stmt->bind_param('ssii', 
+			$_POST['inputName'], 
+			$_POST['inputDescription'], 
+			$_POST['selectGroup'], 
+			$_POST['selectHeaderImage'],
+			$_POST['selectFooterImage'],
+			$_POST['selectTileImage']);
 		$stmt->execute();
 		$stmt->close();
 		header('Location: view_animals.php');
@@ -28,6 +32,16 @@ if(isset($_POST['submit']))
 	<body>
 		<?php
 			include 'navbar.php'
+			$stmt = $db_conn->prepare("SELECT MEDIA.url, MEDIA.id FROM MEDIA LEFT JOIN REPORT ON MEDIA.id = REPORT.report_media_id");
+			$stmt->execute();
+			$stmt->bind_result($media_url, $media_id);
+			$dom_opts = "";
+			while($stmt->fetch()){
+				$dom_opts .= '<option value ="'.$media_id.'" >';
+				$dom_opts .= $media_url;
+				$dom_opts .= '</option>';
+			}
+			$stmt->close();
 		?>
 		<div class="row-fluid">
 			<div class="offset1 span10" id="backer">
@@ -40,20 +54,26 @@ if(isset($_POST['submit']))
 							</div>
 						</div>
 						<div class="controls-group">
-							<label class="control-label" for="selectImage">Image</label>
+							<label class="control-label" for="selectHeaderImage">Header Image</label>
 							<div class="controls">
-								<select name="selectImage" id="selectImage">
-								<?php
-									$stmt = $db_conn->prepare("SELECT MEDIA.url, MEDIA.id FROM MEDIA LEFT JOIN REPORT ON MEDIA.id = REPORT.report_media_id");
-									$stmt->execute();
-									$stmt->bind_result($media_url, $media_id);
-									while($stmt->fetch()){
-										echo '<option value ="'.$media_id.'" >';
-										echo $media_url;
-										echo '</option>';
-									}
-									$stmt->close();
-								?>
+								<select name="selectHeaderImage" id="selectHeaderImage">
+								<?php echo $dom_opts; ?>
+								</select>
+							</div>
+						</div>
+						<div class="controls-group">
+							<label class="control-label" for="selectFooterImage">Footer Image</label>
+							<div class="controls">
+								<select name="selectFooterImage" id="selectFooterImage">
+								<?php echo $dom_opts; ?>
+								</select>
+							</div>
+						</div>
+						<div class="controls-group">
+							<label class="control-label" for="selectHeaderImage">Tile Image</label>
+							<div class="controls">
+								<select name="selectTileImage" id="selectTileImage">
+								<?php echo $dom_opts; ?>
 								</select>
 							</div>
 						</div>
