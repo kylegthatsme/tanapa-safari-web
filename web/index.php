@@ -40,7 +40,7 @@ if(isset($_POST['delete']))
 					<table class="table table-hover">
 						<thead>
 							<tr>
-								<th>ID</th>
+								<th>ID test</th>
 								<th>Name</th>
 								<th>Description</th>
 								<th>Header</th>
